@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>년간 강수량 시각화</title>
+	<!-- 제이쿼리 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<!-- Load D3.js -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<!-- Load billboard.js with style -->
+	<script src="lib/billboard.min.js"></script>
+	<link rel="stylesheet" href="lib/billboard.min.css">	
+</head>
+<body>
+	<h1>나의 직무능력</h1>
+	<div id="chart"></div>	
+
+	<script>
+		var chart = bb.generate({
+		  data: {
+			x: "x",
+			columns: [
+			["x", "HTML", "CSS", "JavaScript", "Photoshop", "Illustrator"], // 컬럼 제목
+			["직무능력", 0, 0, 0, 5, 0]  // 값
+			],
+			type: "radar",	// 레이더 차트
+			labels: true
+		  },
+		  radar: {
+			axis: {
+			  max: 100	// 점수 최대치
+			},
+			level: {
+			  depth: 4
+			}
+		  },
+		  bindto: "#chart"
+		});	
+		
+		// 1초 후에 차트가 로드가 되면 값이 그려지게 처리
+		setTimeout(function(){
+			// 빌보드 load() 메서드
+			chart.load({
+				columns: [
+				["x", "HTML", "CSS", "JavaScript", "Photoshop", "Illustrator"], // 컬럼 제목
+				["직무능력", 90, 80, 50, 85, 70]  // 값
+				]				
+			});
+		}, 1000);
+		
+		
+		
+	</script>
+			
+				
+				
+				
+				
+				
+		
+						
+										
+														
+																		
+																						
+																										
+																														
+																																		
+																																										
+				
+				
+				
+</body>
+</html>
